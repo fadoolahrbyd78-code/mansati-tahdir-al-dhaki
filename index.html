@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173b68">
+  <title>منصتي للتحضير الذكي | الفيزياء</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="الصفحة الرئيسية">
+      <span class="brand-mark">ف</span>
+      <span><strong>منصتي للتحضير الذكي</strong><small>بوابتك لتخطيط درس فيزياء متقن</small></span>
+    </a>
+    <div class="top-actions">
+      <span class="status"><i></i> النسخة التجريبية</span>
+      <button class="btn btn-light" id="printTop" type="button">طباعة التحضير</button>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="side-label">مساحة المعلم</div>
+      <a class="nav-item active" href="#dashboard"><span>⌂</span> الرئيسية</a>
+      <a class="nav-item" href="#planner"><span>▤</span> إعداد تحضير جديد</a>
+      <a class="nav-item" href="#saved"><span>▣</span> تحضيراتي المحفوظة</a>
+      <div class="side-note">
+        <strong>ملاحظة مهمة</strong>
+        <p>هذه نسخة تأسيسية. بيانات المنهج والمراجع الرسمية ستُضاف بعد رفع ملفاتها واعتمادها.</p>
+      </div>
+      <div class="side-footer">إصدار تأسيسي · 2026</div>
+    </aside>
+
+    <main class="main">
+      <section class="welcome" id="dashboard">
+        <div>
+          <p class="eyebrow">التخطيط الذكي يبدأ من هنا</p>
+          <h1>حضّري درس الفيزياء بثقة وتنظيم</h1>
+          <p class="welcome-copy">أنشئي تحضيراً منظماً، واحفظيه للرجوع إليه، واطبعيه عند الحاجة.</p>
+          <a class="btn btn-primary" href="#planner">ابدئي تحضير درس <span>←</span></a>
+        </div>
+        <div class="welcome-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="atom"><b></b><i></i><em></em></div>
+          <span class="formula">F = ma</span><span class="formula small-formula">V = IR</span>
+        </div>
+      </section>
+
+      <section class="stats">
+        <article class="stat-card"><span class="stat-icon blue">▤</span><div><strong id="savedCount">0</strong><small>تحضيرات محفوظة على هذا الجهاز</small></div></article>
+        <article class="stat-card"><span class="stat-icon gold">✦</span><div><strong>3</strong><small>تصنيفات للأهداف التعليمية</small></div></article>
+        <article class="stat-card"><span class="stat-icon mint">✓</span><div><strong>جاهزة</strong><small>للطباعة بعد إكمال البيانات</small></div></article>
+      </section>
+
+      <section class="panel" id="planner">
+        <div class="section-heading">
+          <div><p class="eyebrow">مخطط الدرس</p><h2>إعداد تحضير جديد</h2></div>
+          <span class="step-pill">الخطوة 1 · بيانات الدرس</span>
+        </div>
+        <form id="lessonForm">
+          <div class="form-grid">
+            <label>اسم المعلم/ة<input id="teacher" placeholder="اكتبي اسم المعلم/ة"></label>
+            <label>الصف الدراسي
+              <select id="grade"><option value="الثالث الثانوي">الثالث الثانوي</option><option>الثاني الثانوي</option><option>الأول الثانوي</option></select>
+            </label>
+            <label>الوحدة<input id="unit" placeholder="مثال: المجال الكهربائي"></label>
+            <label>عنوان الدرس<input id="lesson" placeholder="اكتبي عنوان الدرس" required></label>
+            <label>الأسبوع<input id="week" placeholder="رقم الأسبوع أو اسمه"></label>
+            <label>عدد الحصص<input id="periods" type="number" min="1" max="10" value="1"></label>
+            <label>التاريخ<input id="date" type="date"></label>
+            <label>زمن الحصة (دقيقة)<input id="duration" type="number" min="1" value="45"></label>
+          </div>
+
+          <div class="subsection">
+            <div class="subheading"><span class="number">1</span><div><h3>الأهداف التعليمية</h3><p>في نهاية هذا الدرس ينبغي على المتعلم أن يكون قادراً على أن:</p></div></div>
+            <div class="objective-grid">
+              <label class="objective-card"><span class="tag tag-blue">أهداف معرفية</span><textarea id="cognitive" rows="3" placeholder="أن يعرّف... أن يفسّر..."></textarea></label>
+              <label class="objective-card"><span class="tag tag-gold">أهداف مهارية</span><textarea id="skills" rows="3" placeholder="أن يقيس... أن يحسب..."></textarea></label>
+              <label class="objective-card"><span class="tag tag-green">أهداف وجدانية</span><textarea id="affective" rows="3" placeholder="أن يقدّر... أن يلتزم..."></textarea></label>
+            </div>
+            <p class="hint">تذكير: صِيغي كل هدف بفعل سلوكي واضح قابل للملاحظة والقياس.</p>
+          </div>
+
+          <div class="subsection">
+            <div class="subheading"><span class="number">2</span><div><h3>سير الدرس</h3><p>نظّمي مراحل التعلم والأنشطة والتقويم.</p></div></div>
+            <div class="form-grid">
+              <label class="wide">التمهيد وإثارة الدافعية<textarea id="intro" rows="2" placeholder="سؤال مثير، موقف حياتي، صورة أو تجربة..."></textarea></label>
+              <label class="wide">عرض المفاهيم وشرح الدرس<textarea id="explanation" rows="3" placeholder="اكتبي الأفكار الأساسية وخطوات الشرح..."></textarea></label>
+              <label class="wide">النشاط التعليمي والتطبيق<textarea id="activity" rows="2" placeholder="نشاط فردي أو تعاوني، تجربة أو محاكاة..."></textarea></label>
+              <label class="wide">التقويم وأسئلة التحقق<textarea id="assessment" rows="2" placeholder="أسئلة أو مهمة للتحقق من تحقق الأهداف..."></textarea></label>
+              <label class="wide">الخلاصة والواجب المنزلي<textarea id="homework" rows="2" placeholder="تلخيص موجز وتكليف منزلي مناسب..."></textarea></label>
+            </div>
+          </div>
+          <div class="form-footer">
+            <span class="hint">يُحفظ التحضير في هذا المتصفح على جهازك.</span>
+            <div class="button-row">
+              <button type="reset" class="btn btn-light">مسح الحقول</button>
+              <button type="button" id="saveLesson" class="btn btn-primary">حفظ التحضير</button>
+              <button type="button" id="previewLesson" class="btn btn-outline">معاينة للطباعة</button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel saved-panel" id="saved">
+        <div class="section-heading"><div><p class="eyebrow">مكتبتك التعليمية</p><h2>تحضيراتي المحفوظة</h2></div><span class="count-label" id="savedLabel">0 تحضير</span></div>
+        <div id="savedList" class="saved-list"><div class="empty-state"><span>▤</span><strong>لا توجد تحضيرات محفوظة بعد</strong><p>عند حفظ أول تحضير سيظهر هنا.</p></div></div>
+      </section>
+
+      <footer>منصتي للتحضير الذكي <span>·</span> أداة مساعدة للمعلم، وتبقى مراجعة المحتوى واعتماده مسؤولية المعلم.</footer>
+    </main>
+  </div>
+
+  <dialog id="previewDialog">
+    <div class="dialog-head"><h2>معاينة التحضير</h2><button id="closePreview" class="close-btn" aria-label="إغلاق">×</button></div>
+    <div id="previewContent" class="print-sheet"></div>
+    <div class="dialog-actions"><button class="btn btn-primary" id="printPreview">طباعة</button></div>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
